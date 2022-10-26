@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+rails g migration CreateUsers name:string
+rails g migration CreateGroups name:string icon:string
+rails g migration CreateExpenses name:string amount:decimal
