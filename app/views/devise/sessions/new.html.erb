@@ -1,8 +1,9 @@
+<div class="container-fluid w-75 d-flex flex-column align-items-center mt-1">
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "w-100 w-md-75 mt-4"}) do |f| %>
+  <div class="field mt-3">
+    <%= f.label :email, %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 

@@ -15,3 +15,13 @@
  */
 
  @import "font-awesome";
+
+ .field {
+    margin-left: 25%;
+    margin-right: 25%;
+ }
+
+ .actions {
+    margin-left: 25%;
+    margin-right: 25%;
+ }
