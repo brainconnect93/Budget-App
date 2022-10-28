@@ -10,7 +10,6 @@ class GroupsController < ApplicationController
   end
 
   def new
-    # @user = User.find(params[:user_id])
     @group = Group.new
   end
 

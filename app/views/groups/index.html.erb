@@ -8,7 +8,7 @@
       <div class="card mb-4 px-3 p-3 shadow p-3 mb-5 bg-body rounded">
         <%= link_to user_group_expenses_path(current_user, group.id), class: "text-decoration-none" do %>
           <div class="d-flex">
-            <img src="<%= group.icon %>", width="100", height="100", alt="group_icon", class:'me-3 p-3 border border-white rounded-circle'>        
+            <img src="<%= group.icon %>", width="100", height="100", alt="group_icon", class: ' me-3 p-3 border border-white rounded-circle' >        
             <div class="card-title ms-5 d-flex justify-content-between w-100">
               <div>
                 
@@ -31,7 +31,6 @@
   <div class='add-group-btn'>
     <div class='group-btn shadow p-3 mb-5 rounded'>
       <%= link_to "Add Category", new_group_path(current_user), class: 'new-group-btn text-light' %>
-
     </div>
   </div>
 </div>
