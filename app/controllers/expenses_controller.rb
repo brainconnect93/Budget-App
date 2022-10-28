@@ -1,31 +1,35 @@
 class ExpensesController < ApplicationController
-  load_and_authorize_resource
+  before_action :set_group
 
   def index
-    @group = Group.find(params[:group_id])
-    @expenses = @group.expenses.all.order('created_at DESC')
+    @user = current_user
+    @expenses = @group.expenses
+    @total = @expenses.sum(:amount)
   end
 
   def new
-    @group = Group.find(params[:group_id])
-    @expense = @group.expenses.new
+    @expense = Expense.new
   end
 
   def create
-    @group = Group.find(params[:group_id])
-    @expense = @group.expenses.create(name: params[:expense][:name],
-                                      amount: params[:expense][:amount],
-                                      user_id: current_user.id,
-                                      group_id: @group.id)
+    @user = User.find(params[:user_id])
+    @expense = Expense.new(expense_params)
+    @expense.user_id = current_user.id
+    if @expense.valid?
+      @expense.save
+      @expense.groups.push(@group)
+      flash[:notice] = 'New Transaction Created Successfully'
+      redirect_to user_group_expenses_path
+    else
+      render :new
+    end
+  end
 
+  def destroy
+    @expense.destroy
     respond_to do |format|
-      if @expense.save
-        format.html do
-          redirect_to group_expenses_path, notice: 'Your transaction has been successfully created.'
-        end
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+      format.html { redirect_to user_group_expenses_path, notice: 'Budget has been successfully removed.' }
+      format.json { head :no_content }
     end
   end
 
