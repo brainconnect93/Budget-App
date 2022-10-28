@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: %i[destroy]
   def index
     if user_signed_in?
       @user = current_user
@@ -10,7 +11,7 @@ class GroupsController < ApplicationController
   end
 
   def new
-    # @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @group = Group.new   
   end
 
@@ -21,7 +22,7 @@ class GroupsController < ApplicationController
     @group.user_id = @user.id
     if @group.valid?
       @group.save
-      flash[:notice] = 'New group Created Successfully'
+      flash[:notice] = 'New Transaction Created Successfully'
       redirect_to user_groups_path
     else
       flash[:notice] = 'Input a valid Icon image and Name.'
@@ -44,6 +45,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit!
+    params.require(:group).permit(:name , :icon)
   end
 end

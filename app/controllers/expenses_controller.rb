@@ -26,6 +26,7 @@ class ExpensesController < ApplicationController
   end
 
   def destroy
+    @expense = Expense.find(params[:id])
     @expense.destroy
     respond_to do |format|
       format.html { redirect_to user_group_expenses_path, notice: 'Budget has been successfully removed.' }
