@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
     @group.user_id = @user.id
     if @group.valid?
       @group.save
-      flash[:notice] = 'New Transaction Created Successfully'
+      flash[:notice] = 'New Category Created Successfully'
       redirect_to user_groups_path
     else
       flash[:notice] = 'Input a valid Icon image and Name.'

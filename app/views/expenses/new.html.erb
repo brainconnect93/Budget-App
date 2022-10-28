@@ -7,7 +7,7 @@
     </h1>
   </div>
   <div class="card w-100 d-flex justify-content-center align-items-center  p-3 shadow p-3 mb-5 bg-body rounded">
-    <h2 class="expense-title">Create New Tranasction</h2>
+    <h2 class="expense-title">Create New Transaction</h2>
     <%= form_with model: @expense, url: user_group_expenses_path(current_user, @group), method: :post, scope: :budget,  class: 'd-flex flex-column  col-md-5 justify-content-center align-items-center' do |f| %> 
       <div class="input-group p-2 mb-3">
         <%= f.label :name, class: "input-group-text" %><br />
