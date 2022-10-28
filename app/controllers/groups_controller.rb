@@ -1,26 +1,39 @@
 class GroupsController < ApplicationController
   def index
-    @groups = current_user.groups
-  end
-
-  def show
-    @group = Group.find(params[:id])
+    if user_signed_in?
+      @user = current_user
+      @groups = @user.groups.order('created_at DESC')
+      @expenses = Expense.all
+    else
+      render root_path
+    end
   end
 
   def new
+    # @user = User.find(params[:user_id])
     @group = Group.new
   end
 
   def create
-    @group = Group.create(group_params)
-    @group.user_id = current_user.id
+    puts group_params
+    @user = User.find(params[:user_id])
+    @group = Group.new(group_params)
+    @group.user_id = @user.id
+    if @group.valid?
+      @group.save
+      flash[:notice] = 'New group Created Successfully'
+      redirect_to user_groups_path
+    else
+      flash[:notice] = 'Input a valid Icon image and Name.'
+      render :new
+    end
+  end
 
+  def destroy
+    @group.destroy
     respond_to do |format|
-      if @group.save
-        format.html { redirect_to groups_url, notice: 'Group was successfully created.' }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+      format.html { redirect_to user_groups_path, notice: 'Group has been successfully removed.' }
+      format.json { head :no_content }
     end
   end
 
@@ -31,6 +44,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit!
   end
 end
