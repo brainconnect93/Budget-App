@@ -14,13 +14,13 @@ RSpec.describe Group, type: :model do
   end
 
   it 'name should be present' do
-    subject.name = @group.name
-    expect(subject).to be_valid
+    subject.name = ''
+    expect(subject).to_not be_valid
   end
 
   it 'icon should be present' do
-    subject.icon = @group.icon
-    expect(subject).to be_valid
+    subject.icon = ''
+    expect(subject).to_not be_valid
   end
 
   it 'icon should not be blank' do
