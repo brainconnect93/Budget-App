@@ -14,7 +14,7 @@
 
 ### Live demo
 
-[Live Demo Link]()
+[Live Demo Link]("https://brainconnect-budget-app.herokuapp.com")
 
 [Loom video]("https://www.loom.com/share/b8855a40899d48569858dd2d71461eb8")
 
