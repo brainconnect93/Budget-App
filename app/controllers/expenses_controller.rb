@@ -34,7 +34,9 @@ class ExpensesController < ApplicationController
     @expense.destroy
     @group = set_group
     respond_to do |format|
-      format.html { redirect_to user_group_expenses_path(current_user, @group.id), notice: 'Budget has been successfully removed.' }
+      format.html do
+        redirect_to user_group_expenses_path(current_user, @group.id), notice: 'Budget has been successfully removed.'
+      end
       format.json { head :no_content }
     end
   end
