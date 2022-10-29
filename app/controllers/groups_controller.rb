@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
     if user_signed_in?
       @user = current_user
       @groups = @user.groups.order('created_at DESC')
-      @expenses = Expense.all
+      @expenses = current_user.expenses
     else
       render root_path
     end
