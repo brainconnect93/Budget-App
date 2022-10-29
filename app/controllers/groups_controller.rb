@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
-    @group = Group.new   
+    @group = Group.new
   end
 
   def create
@@ -45,6 +45,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name , :icon)
+    params.require(:group).permit(:name, :icon)
   end
 end
