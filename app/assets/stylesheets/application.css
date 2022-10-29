@@ -18,23 +18,19 @@
 @import "font-awesome";
 
 body {
-  background-image: url("https://i.pinimg.com/564x/7b/a5/b3/7ba5b3098a95c28e52f3f08d1b6c0741.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   font-family: 'Playfair Display', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .nav-logo {
-  /* background-image: url("https://pbs.twimg.com/media/FE0BC8dXwAwpRN5.jpg:large"); */
+  background-image: url("https://i.pinimg.com/564x/7c/90/66/7c90667fe459a199db959c3126656e49.jpg");
   background-repeat: no-repeat;
   background-position: 20% 20%;
   background-size: cover;
-  /* -webkit-text-fill-color: rgb(0 0 0 / 0%); */
+  -webkit-text-fill-color: rgb(0 0 0 / 0%);
   -webkit-background-clip: text;
-  background-clip: text;
-  /* color: transparent; */
+  color: transparent;
   max-width: 900px;
   align-self: center;
   display: flex;
@@ -45,12 +41,8 @@ body {
   text-decoration: none;
 }
 
-.sign {
-  color: #fff;
-}
-
 .para {
-  color: #fff;
+  font-size: 1rem;
 }
 
 .fa-solid {
@@ -59,21 +51,17 @@ body {
   margin-right: 10px;
 }
 
-/* https://afremov.com/images/product/image_1343.jpeg */
-
 .user-head {
-  /* background-image: url("https://pbs.twimg.com/media/FE0BC8dXwAwpRN5.jpg:large"); */
-  /* font-weight: 700;
+  background-image: url("https://i.pinimg.com/564x/7c/90/66/7c90667fe459a199db959c3126656e49.jpg");
+  font-weight: 700;
   background-repeat: no-repeat;
   background-position: 20% 20%;
   background-size: cover;
   -webkit-text-fill-color: rgb(0 0 0 / 0%);
   -webkit-background-clip: text;
-  background-clip: text;
   color: transparent;
   max-width: 900px;
-  align-self: center; */
-  color: #fff;
+  align-self: center;
 }
 
 .field {
@@ -117,17 +105,12 @@ body {
   margin-bottom: 20px;
 }
 
-.expense-title {
-  color: #fff;
-}
-
 .list-group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
   margin-bottom: 20px;
-  /* color: #fff; */
 }
 
 .icon-card {
@@ -156,7 +139,7 @@ body {
   font: inherit;
   margin-bottom: 10px;
   outline: 0;
-  transition: all .5s linear;
+  transition: all 0.5s linear;
 }
 
 .log-btn:hover {
@@ -166,7 +149,7 @@ body {
 }
 
 .log-btn:active {
-  background: #006699;
+  background: #069;
   box-shadow: 0 0 0 #006599;
   transform: translateY(3px);
 }
