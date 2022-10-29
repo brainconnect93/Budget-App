@@ -32,7 +32,6 @@ class GroupsController < ApplicationController
 
   def destroy
     @group.destroy
-    redirect_to user_groups_path
     respond_to do |format|
       format.html { redirect_to user_groups_path, notice: 'Group has been successfully removed.' }
       format.json { head :no_content }

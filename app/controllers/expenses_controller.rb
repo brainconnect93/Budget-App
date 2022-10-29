@@ -32,8 +32,9 @@ class ExpensesController < ApplicationController
   def destroy
     @expense = Expense.find(params[:id])
     @expense.destroy
+    @group = set_group
     respond_to do |format|
-      format.html { redirect_to user_group_expenses_path, notice: 'Budget has been successfully removed.' }
+      format.html { redirect_to user_group_expenses_path(current_user, @group.id), notice: 'Budget has been successfully removed.' }
       format.json { head :no_content }
     end
   end

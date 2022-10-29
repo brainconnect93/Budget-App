@@ -16,7 +16,7 @@
 
 [Live Demo Link]()
 
-[Loom video]("https://www.loom.com/share/b8855a40899d48569858dd2d71461eb8")
+[Loom video](https://loom.com/share/e64dbc9dd0b441c085aaa148a3d2cb81)
 
 ## Getting Started
 
